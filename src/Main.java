@@ -3,6 +3,11 @@ import javax.swing.*;
 public class Main {
     public static void main(String[] args) {
 
+
+        MenuPrincipal();
+    }
+
+    private static void MenuPrincipal(){
         JOptionPane frame = new JOptionPane();
 
         Object[] options = {"Conversor Monedas", "Conversor Temperatura"}; // Array que contiene las opciones del menu principal
@@ -12,14 +17,16 @@ public class Main {
         System.out.println(s);
 
         try{
-            if(s.equals("Conversor Monedas")){
+            if(s == null){
+                JOptionPane.showMessageDialog(null, "User pressed cancel, exiting program now!");
+                System.exit(0);
+            }else{
                 System.out.println("estas en las opciones del menu");
                 new ClaseConversor();
             }
-        } catch (NullPointerException e){
+        } catch (NullPointerException | NumberFormatException e){
             e.printStackTrace();
         }
-
 
     }
 }
