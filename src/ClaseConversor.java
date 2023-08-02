@@ -5,6 +5,13 @@ import static com.sun.jmx.mbeanserver.Util.cast;
 public class ClaseConversor {
 
     public ClaseConversor(){
+
+        Input();
+    }
+
+
+
+    public static void Input(){
         JFrame frame = new JFrame();
         String num1 = JOptionPane.showInputDialog(frame, "Ingresa la cantidad de dinero que desea convertir");
 
@@ -14,10 +21,9 @@ public class ClaseConversor {
         } catch(NullPointerException | NumberFormatException e){
             e.printStackTrace();
             JOptionPane.showMessageDialog(frame, "Debe de ingresar numeros no texto", "Error", JOptionPane.PLAIN_MESSAGE);
+            System.exit(0);
         }
-
     }
-
 
 
 }
