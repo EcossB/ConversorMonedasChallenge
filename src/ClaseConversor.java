@@ -13,8 +13,11 @@ public class ClaseConversor {
             System.out.println(num);
         } catch(NullPointerException | NumberFormatException e){
             e.printStackTrace();
+            JOptionPane.showMessageDialog(frame, "Debe de ingresar numeros no texto", "Error", JOptionPane.PLAIN_MESSAGE);
         }
 
     }
+
+
 
 }
