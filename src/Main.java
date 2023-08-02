@@ -11,9 +11,15 @@ public class Main {
 
         System.out.println(s);
 
-        if(s == "Conversor Monedas"){
-            System.out.println("estas en las opciones del menu");
+        try{
+            if(s.equals("Conversor Monedas")){
+                System.out.println("estas en las opciones del menu");
+                new ClaseConversor();
+            }
+        } catch (NullPointerException e){
+            e.printStackTrace();
         }
+
 
     }
 }
