@@ -47,59 +47,49 @@ public class ClaseConversor {
 
         switch (cond){
             case "De peso a Dolar":
-                result = n * 0.017842225;
-                JOptionPane.showMessageDialog(frame, "El valor es: " + result + " Dolares", "Resultado", JOptionPane.PLAIN_MESSAGE);
+                operacion(frame, n, 0.017842225, "Dolares");
                 break;
             case "De peso a Euro":
-                result = n * 0.016;
-                JOptionPane.showMessageDialog(frame, "El valor es: " + result + " Euros", "Resultado", JOptionPane.PLAIN_MESSAGE);
+                operacion(frame, n, 0.016, "Euros");
                 break;
             case "De peso a Yen":
-                 result = n * 2.53;
-                JOptionPane.showMessageDialog(frame, "El valor es: " + result + " Yen", "Resultado", JOptionPane.PLAIN_MESSAGE);
-               //
+                operacion(frame, n, 2.53, "Yen");
                 break;
             case "De peso a Libras":
-                 result = n * 0.014;
-                JOptionPane.showMessageDialog(frame, "El valor es: " + result + " Libras", "Resultado", JOptionPane.PLAIN_MESSAGE);
-               //
+                operacion(frame, n, 0.014, "Libras");
                 break;
             case "De peso a Won Coreano":
-                 result = n * 22.92;
-                JOptionPane.showMessageDialog(frame, "El valor es: " + result + " Won Coreano", "Resultado", JOptionPane.PLAIN_MESSAGE);
-               //
+                operacion(frame, n, 22.92, "Won Coreano");
                 break;
             case "De Dolar a Peso":
-                 result = n / 0.017842225;
-                JOptionPane.showMessageDialog(frame, "El valor es: " + result + " Pesos", "Resultado", JOptionPane.PLAIN_MESSAGE);
-               //
+                operaciondiv(frame,n,0.017842225);
                 break;
             case "De Euro a Peso":
-                 result = n / 0.016;
-                JOptionPane.showMessageDialog(frame, "El valor es: " + result + " Pesos", "Resultado", JOptionPane.PLAIN_MESSAGE);
-               //
+                operaciondiv(frame,n,0.016);
                 break;
             case "De Yen a Peso":
-                 result = n / 2.53;
-                JOptionPane.showMessageDialog(frame, "El valor es: " + result + " Pesos", "Resultado", JOptionPane.PLAIN_MESSAGE);
-               //
+                operaciondiv(frame,n,2.53);
                 break;
             case "De Libras a Peso":
-                 result = n / 0.014;
-                JOptionPane.showMessageDialog(frame, "El valor es: " + result + " Pesos", "Resultado", JOptionPane.PLAIN_MESSAGE);
-               //
+                operaciondiv(frame,n,0.014);
                 break;
             case "De Won Coreano a Peso":
-                 result = n / 22.92;
-                JOptionPane.showMessageDialog(frame, "El valor es: " + result + " Pesos", "Resultado", JOptionPane.PLAIN_MESSAGE);
-               //
-
+                operaciondiv(frame,n,22.92);
                 break;
             default:
                 System.out.println("termino");
         }
 
+    }
 
+    private static void operacion(JFrame frame, double n, Double valor,String moneda){
+        double result = n * valor;
+        JOptionPane.showMessageDialog(frame, "El valor es: $" + Math.rint(result) + moneda, "Resultado", JOptionPane.PLAIN_MESSAGE);
+    }
+
+    private static void operaciondiv(JFrame frame, double n, Double valor){
+        double result = n / valor;
+        JOptionPane.showMessageDialog(frame, "El valor es: $" + Math.rint(result) + " pesos", "Resultado", JOptionPane.PLAIN_MESSAGE);
     }
 
 
