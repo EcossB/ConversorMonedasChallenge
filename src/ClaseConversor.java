@@ -47,8 +47,7 @@ public class ClaseConversor {
 
         switch (cond){
             case "De peso a Dolar":
-                result = n * 0.017842225;
-                JOptionPane.showMessageDialog(frame, "El valor es: $" + result + " Dolares", "Resultado", JOptionPane.PLAIN_MESSAGE);
+                operacion(frame, n, 0.017842225, "Dolares");
                 break;
             case "De peso a Euro":
                 result = n * 0.016;
@@ -101,8 +100,9 @@ public class ClaseConversor {
 
     }
 
-    private static void operacion(){
-
+    private static void operacion(JFrame frame, double n, Double valor,String moneda){
+        double result = n * valor;
+        JOptionPane.showMessageDialog(frame, "El valor es: $" + result + moneda, "Resultado", JOptionPane.PLAIN_MESSAGE);
     }
 
 
