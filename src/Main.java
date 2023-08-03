@@ -4,6 +4,7 @@ public class Main {
     public static void main(String[] args) {
 
         MenuPrincipal();
+        Repetir();
     }
 
 
@@ -12,6 +13,7 @@ public class Main {
      * Digase si quiere convertir monedas a otras divisas o si quiere hacer conversiones de temperatura.
      * Dentro de este metodo se hace tambien manejo de errores a NullPointer, si ocurre un error de este tipo
      * se agarra la excepcion y se lanza un cuadro de dialogo diciendo que el usuario presiono cancelar y se termina el programa.
+     * {@code @Author Erwing Coss}
      */
     private static void MenuPrincipal(){
         JOptionPane frame = new JOptionPane(); // instanciando la clase JOptionPane
@@ -31,6 +33,18 @@ public class Main {
         } catch (NullPointerException | NumberFormatException e){
             e.printStackTrace();
         }
-
     }
+
+    private static void Repetir(){
+        JOptionPane frame = new JOptionPane();
+        int n = JOptionPane.showConfirmDialog(
+                frame,
+                "Deseas Volver a utilzar el programa?",
+                "Quiere Convertir de nuevo?",
+                JOptionPane.YES_NO_OPTION);
+
+        while (n == 0) {
+            MenuPrincipal();
+        }
+        }
 }
