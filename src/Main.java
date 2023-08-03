@@ -4,7 +4,7 @@ public class Main {
     public static void main(String[] args) {
 
         MenuPrincipal();
-        Repetir();
+
     }
 
 
@@ -29,22 +29,23 @@ public class Main {
             }else{
                 System.out.println("estas en las opciones del menu");
                 new ClaseConversor();
+                Repetir(frame);
+
             }
         } catch (NullPointerException | NumberFormatException e){
             e.printStackTrace();
         }
     }
 
-    private static void Repetir(){
-        JOptionPane frame = new JOptionPane();
+    private static void Repetir(JOptionPane frame){
         int n = JOptionPane.showConfirmDialog(
                 frame,
                 "Deseas Volver a utilzar el programa?",
                 "Quiere Convertir de nuevo?",
                 JOptionPane.YES_NO_OPTION);
 
-        while (n == 0) {
+        if (n == 0) {
             MenuPrincipal();
         }
-        }
+    }
 }
